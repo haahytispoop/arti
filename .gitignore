@@ -95,3 +95,8 @@ end
 
 import(image)
 end)
+local Tab = Window:NewTab("Local")
+local Section = Tab:NewSection("LocalPlayer")
+Section:NewSlider("Walk speed", "SliderInfo", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
