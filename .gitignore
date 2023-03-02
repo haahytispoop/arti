@@ -1,9 +1,34 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Art.Best V5.6.1", "Synapse")
-local Tab = Window:NewTab("Generate")
-local Section = Tab:NewSection("Generate")
-Section:NewTextBox("image link", "", function(txt)
-	local image = (txt) -- image you want to import
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Key system", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+OrionLib:MakeNotification({
+	Name = "Logged in!",
+	Content = "You are logged in as "..Player.Name..".",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.Key = "SA_Art.BeSt137"
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Art.Best {Free version}", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Main"
+})
+Tab:AddTextbox({
+	Name = "Image link",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		local image = (Value)
 local resolutionX = 32 -- usually it's 32 but it might change depending on the frame?
 local resolutionY = 32 -- usually it's 32 but it might change depending on the frame?
 
@@ -94,9 +119,67 @@ function import(url)
 end
 
 import(image)
-end)
-local Tab = Window:NewTab("Player")
-local Section = Tab:NewSection("LocalPlayer")
-Section:NewSlider("Walk speed", "SliderInfo", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
+	end	  
+})
+
+end
+
+function CorrectKeyNotification()
+OrionLib:MakeNotification({
+	Name = "Correct Key!",
+	Content = "You have entered the correct key!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+
+function IncorrectKeyNotification()
+OrionLib:MakeNotification({
+	Name = "Incorrect Key!",
+	Content = "You have entered the incorrect key!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end
+
+local Tab = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key!",
+	Callback = function()
+      		if _G.KeyInput == _G.Key then
+      		MakeScriptHub()
+            CorrectKeyNotification()
+            else
+                IncorrectKeyNotification()
+      		end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Copy Key Link",
+	Callback = function()
+      		setclipboard("https://discord.gg/T6PEz44PkR")
+OrionLib:MakeNotification({
+	Name = "Key",
+	Content = "Link copyed in clipboard",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+  	end    
+})
+
