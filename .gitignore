@@ -9,7 +9,7 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-_G.Key = "Pixel555Arts"
+_G.Key = "Donateme25robux>:("
 _G.KeyInput = "string"
 
 function MakeScriptHub()
