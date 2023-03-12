@@ -9,7 +9,7 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-_G.Key = "buy_vip_for_better"
+_G.Key = "free"
 _G.KeyInput = "string"
 
 function MakeScriptHub()
