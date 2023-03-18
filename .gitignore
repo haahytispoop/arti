@@ -1,3 +1,4 @@
+game.Players:FindFirstChild('plutoscriptsyt'):Kick('Blacklisted. WhiteList cost 50 rbx. Before u buyed whitelist u cant buy vip')
 game.Players:FindFirstChild('ninjja36'):Kick('Blacklisted. WhiteList cost 50 rbx. Before u buyed whitelist u cant buy vip')
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Player = game.Players.LocalPlayer
