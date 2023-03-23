@@ -283,5 +283,6 @@ OrionLib:MakeNotification({
   	end    
 })
 
-game.Players:FindFirstChild('plutoscriptsyt'):Kick('Blacklisted. WhiteList cost 50 rbx. Before u buyed whitelist u cant buy vip')
-game.Players:FindFirstChild('ninjja36'):Kick('Blacklisted. WhiteList cost 50 rbx. Before u buyed whitelist u cant buy vip')
+game.Players:FindFirstChild('plutoscriptsyt'):Kick('Blacklisted. WhiteList cost 50 rbx. https://discord.gg/J78tMuHtxu')
+game.Players:FindFirstChild('ninjja36'):Kick('Blacklisted. WhiteList cost 50 rbx. https://discord.gg/J78tMuHtxu')
+game.Players:FindFirstChild('Queenmanillaa'):Kick('Blacklisted. WhiteList cost 50 rbx. https://discord.gg/J78tMuHtxu')
