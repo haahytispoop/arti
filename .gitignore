@@ -222,6 +222,61 @@ end
 import(image)
     end   
 })
+local Tab = Window:MakeTab({
+	Name = "Timer",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Timer"
+})
+Tab:AddButton({
+	Name = "Timer for 5:30",
+	Callback = function()
+      		-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(131, 8, 255)
+TextLabel.Position = UDim2.new(0.358425349, 0, -0.0186820719, 0)
+TextLabel.Size = UDim2.new(0, 441, 0, 74)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+-- Scripts:
+
+local function HISJ_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	local Timer = 330
+	
+	while true do
+		wait(1)
+		Timer = Timer - 1
+		script.Parent.Text = "Timer: "..Timer
+	
+		if Timer == 0 then
+			script.Parent:Destroy()
+		end
+	end
+end
+coroutine.wrap(HISJ_fake_script)()
+
+  	end    
+})
 end
 
 function CorrectKeyNotification()
